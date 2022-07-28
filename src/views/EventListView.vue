@@ -1,7 +1,11 @@
 <template>
   <h1>Events For Good</h1>
   <div class="events">
-    <EventCard v-for="event in events" :key="event.id" :event="event" />
+    <EventCard
+      v-for="event in events"
+      :key="event.id"
+      :event="event"
+    ></EventCard>
     <div class="pagination">
       <router-link
         id="page-prev"
@@ -29,7 +33,7 @@
 
 <script>
 // @ is an alias to /src
-// import EventCard from '@/components/EventCard.vue'
+import EventCard from '@/components/EventCard.vue'
 import EventService from '@/services/EventService.js'
 import { watchEffect } from '@vue/runtime-core'
 export default {
@@ -45,7 +49,7 @@ export default {
     }
   },
   components: {
-    // EventCard
+    EventCard
   },
   data() {
     return {
